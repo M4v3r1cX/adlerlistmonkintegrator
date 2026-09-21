@@ -1,6 +1,7 @@
 package com.m4v3r1cx.adlerlistmonkintegrator.client;
 
 import com.m4v3r1cx.adlerlistmonkintegrator.config.ListmonkProperties;
+import com.m4v3r1cx.adlerlistmonkintegrator.dto.SubscriberDTO;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -33,12 +34,17 @@ public class ListmonkClient {
                 .body(Object.class);
     }
 
-    public Map<String, Object> createSubscriber(String email, String name, List<Integer> lists) {
+    public Map<String, Object> createSubscriber(SubscriberDTO subscriberDTO, List<Integer> lists) {
         Map<String, Object> payload = new HashMap<>();
-        payload.put("email", email);
-        payload.put("name", name);
+        payload.put("email", subscriberDTO.getEmail());
+        payload.put("name", subscriberDTO.getNombreContacto());
         payload.put("status", "enabled");
         payload.put("lists", lists);
+
+        Map<String, Object> attributes = new HashMap<>();
+        
+
+        payload.put("attributes", attributes);
 
         return restClient.post()
                 .uri("/api/subscribers")

@@ -13,6 +13,6 @@ public class SubscriptionService {
     private final ListmonkClient listmonkClient;
 
     public Object subscribe(SubscriberDTO subscriberDTO) {
-        return listmonkClient.createSubscriber(subscriberDTO.getEmail(), subscriberDTO.getName(), List.of(1));
+        return listmonkClient.createSubscriber(subscriberDTO, List.of(1));
     }
 }
