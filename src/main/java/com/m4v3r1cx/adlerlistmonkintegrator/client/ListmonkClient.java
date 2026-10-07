@@ -42,7 +42,23 @@ public class ListmonkClient {
         payload.put("lists", lists);
 
         Map<String, Object> attributes = new HashMap<>();
-        
+        attributes.put("codigoCliente", subscriberDTO.getCodigoCliente());
+        attributes.put("codContacto", subscriberDTO.getCodContacto());
+        attributes.put("nombreCliente", subscriberDTO.getNombreCliente());
+        attributes.put("tipoContacto", subscriberDTO.getTipoContacto());
+        attributes.put("lineaNegocio", subscriberDTO.getLineaNegocio());
+        attributes.put("vendedor", subscriberDTO.getVendedor());
+        attributes.put("categoria", subscriberDTO.getCategoria());
+        attributes.put("keyAccount", subscriberDTO.getKeyAccount());
+        attributes.put("clienteObjetivo", subscriberDTO.getClienteObjetivo());
+        attributes.put("tipoCliente", subscriberDTO.getTipoCliente());
+        attributes.put("estadoDesarrollo", subscriberDTO.getEstadoDesarrollo());
+        attributes.put("recibeCorreos", subscriberDTO.getRecibeCorreos());
+        attributes.put("eliminarBase", subscriberDTO.getEliminarBase());
+        attributes.put("visitas36Meses", subscriberDTO.getVisitas36Meses());
+        attributes.put("cotizacionesGanadas", subscriberDTO.getCotizacionesGanadas());
+        attributes.put("montoAsegurado", subscriberDTO.getMontoAsegurado());
+        attributes.put("telemarketing12meses", subscriberDTO.getTelemarketing12meses());
 
         payload.put("attributes", attributes);
 
